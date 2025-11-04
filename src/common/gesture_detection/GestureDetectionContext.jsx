@@ -4,30 +4,66 @@ import * as fp from "fingerpose";
 import * as tf from "@tensorflow/tfjs";
 import Gestures from "../Gestures";
 
-const GestureDecectionContext = createContext();
+const GestureDetectionContext = createContext();
 
 export const GestureDetectionProvider = ({ children }) => {
   const [modelLoading, setModelLoading] = useState(true);
   const [gesture, setGesture] = useState(null);
   const [gestureArray, setGestureArray] = useState([]);
+  const [gestureProgress, setGestureProgress] = useState({ gesture: null, progress: 0.0 });
   const webcamRef = useRef(null);
   const modelRef = useRef(null);
 
+  // Load the handpose model
   useEffect(() => {
     const loadModel = async () => {
       try {
         setModelLoading(true);
         modelRef.current = await handpose.load();
-        console.log("handpose model loaded");
+        console.log("Handpose model loaded");
         setModelLoading(false);
       } catch (error) {
-        console.error("Error loading handpose model: ", error);
+        console.error("Error loading handpose model:", error);
       }
     };
 
     loadModel();
-  }, [])
+  }, []);
 
+  // Setup hidden webcam
+  useEffect(() => {
+    const setupCamera = async () => {
+      const video = document.createElement("video");
+      video.style.display = "none"; // keep it hidden
+      video.width = 640;
+      video.height = 480;
+      document.body.appendChild(video); // must be in DOM for TensorFlow
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        await video.play();
+        webcamRef.current = { video };
+        console.log("Camera initialized (hidden)");
+      } catch (err) {
+        console.error("Camera setup failed:", err);
+      }
+    };
+
+    setupCamera();
+
+    return () => {
+      // Cleanup camera stream on unmount
+      if (webcamRef.current?.video?.srcObject) {
+        webcamRef.current.video.srcObject.getTracks().forEach(track => track.stop());
+      }
+      if (webcamRef.current?.video) {
+        document.body.removeChild(webcamRef.current.video);
+      }
+    };
+  }, []);
+
+  // Detection loop
   useEffect(() => {
     let intervalId;
 
@@ -62,32 +98,44 @@ export const GestureDetectionProvider = ({ children }) => {
         setGesture(null);
         setGestureArray([]);
       }
-    }
-    
+    };
+
     if (!modelLoading) intervalId = setInterval(detect, 200);
 
     return () => clearInterval(intervalId);
+  }, [modelLoading]);
 
-  }, [modelLoading])
+  useEffect(() => {
+    if (gestureArray.length === 0) {
+      setGestureProgress({ gesture: null, progress: 0.0 });
+    } else {
+      const currentGesture = gestureArray[gestureArray.length - 1];
+      const progress = gestureArray
+        .slice() // make a shallow copy
+        .reverse() // check from the end
+        .findIndex(g => g !== currentGesture); // find where it stops matching
+      // if all elements are the same, findIndex returns -1 → handle that
+      const consecutiveCount = progress === -1 ? gestureArray.length : progress;
+      setGestureProgress({ gesture: currentGesture, progress: consecutiveCount });
+    }
+  }, [gestureArray])
 
   return (
-    <GestureDecectionContext.Provider
+    <GestureDetectionContext.Provider
       value={{
-        webcamRef,
-        modelLoading,
         gesture,
-        gestureArray
+        gestureArray,
+        gestureProgress,
+        modelLoading
       }}
     >
       {children}
-    </GestureDecectionContext.Provider>
-  )
-
-
+    </GestureDetectionContext.Provider>
+  );
 };
 
 export const useGestureDetection = () => {
-  const context = useContext(GestureDecectionContext);
-  if (!context) throw new Error ("useGestureDetection must be used within a GestureDetectionProvider");
+  const context = useContext(GestureDetectionContext);
+  if (!context) throw new Error("useGestureDetection must be used within a GestureDetectionProvider");
   return context;
-}
+};
