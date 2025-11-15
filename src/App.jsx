@@ -8,6 +8,7 @@ function App() {
   return (
     <GestureDetectionProvider>
       <Gamescreen />
+      <Fingerpose_Poc />
     </GestureDetectionProvider>
   )
 }
