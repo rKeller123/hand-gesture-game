@@ -81,6 +81,7 @@ export const Game = () => {
                 numOfCorrects={numOfCorrects}
                 onAnswer={handleAnswer}
                 currentQuestion={currentQuestion}
+                gestureProgress={gestureProgress}
             />
         );
     }
