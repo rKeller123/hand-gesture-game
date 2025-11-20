@@ -29,6 +29,7 @@ const ImageRow = ({ images = [] }) => (
                             top: 0,
                             left: 0,
                             objectFit: "cover",
+                            zIndex: 2
                         }}
                     />
                     {/* This forces the card to maintain a fixed aspect ratio (e.g., 16:9) */}
@@ -46,9 +47,10 @@ export const Gamescreen = ({
                                correctAnswerGiven,
                                numOfCorrects,
                                onAnswer,
-                               currentQuestion
+                               currentQuestion,
+                               gestureProgress
                            }) => {
-    const answerBorder = (optionNum, baseBg) => {
+    const borderWhenAnswerGiven = (optionNum, baseBg) => {
         const isSelected = selected === optionNum;
 
         const border =
@@ -75,6 +77,16 @@ export const Gamescreen = ({
     const imagesFirstAnswer = currentQuestion.answer1_imgs;
 
     const imagesSecondAnswer = currentQuestion.answer2_imgs;
+
+    const getGestureProgressFor = (optionNum) => {
+        if (!gestureProgress || selected !== null) return 0;
+
+        const isTarget =
+            (gestureProgress.gesture === "thumbs_up" && optionNum === 0) ||
+            (gestureProgress.gesture === "thumbs_down" && optionNum === 1);
+
+        return isTarget ? Math.min(gestureProgress.progress * 10, 100) : 0;
+    }
 
     return (
         <Box
@@ -131,8 +143,21 @@ export const Gamescreen = ({
                             {/* First answer */}
                             <Box
                                 onClick={() => onAnswer(0)}
-                                sx={answerBorder(0, "#ffddf1")}
+                                sx={borderWhenAnswerGiven(0, "#ffddf1")}
                             >
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        left: 0,
+                                        top: 0,
+                                        width: `${getGestureProgressFor(0)}%`,
+                                        height: "200%",
+                                        background: "#ff4455",
+                                        transition: "width 0.1s linear",
+                                        pointerEvents: "none",
+                                        zIndex: 1,
+                                    }}
+                                />
                                 <Box sx={{ flex: 1,  height: "40vh", overflow: "hidden"  }}>
                                     <Typography variant="h6" mb={1}>
                                         {currentQuestion.answer1}
@@ -173,8 +198,21 @@ export const Gamescreen = ({
                             {/* Second answer */}
                             <Box
                                 onClick={() => onAnswer(1)}
-                                sx={answerBorder(1, "#2596be")}
+                                sx={borderWhenAnswerGiven(1, "#2596be")}
                             >
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        left: 0,
+                                        top: 0,
+                                        width: `${getGestureProgressFor(1)}%`,
+                                        height: "200%",
+                                        background: "#3344ff",
+                                        transition: "width 0.1s linear",
+                                        pointerEvents: "none",
+                                        zIndex: 1,
+                                    }}
+                                />
                                 <Box sx={{ flex: 1,  height: "40vh" }}>
                                     <ImageRow images={imagesSecondAnswer} />
                                     <Typography variant="h6" mb={1} sx={{ alignSelf: "center" }}>
