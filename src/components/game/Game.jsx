@@ -41,7 +41,7 @@ export const Game = () => {
         setNumOfCorrects((c) => c + (isCorrect ? 1 : 0));
 
         if (isCorrect) {
-            setTimeout(() => pickNextQuestion(questions), 1000);
+            setTimeout(() => pickNextQuestion(questions), 3000);
         } else {
             // TODO: send to final screen
         }
