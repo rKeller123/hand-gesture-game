@@ -108,7 +108,6 @@ export const Gamescreen = ({
                 <Box sx={{ flex: 3, display: "flex", flexDirection: "row", gap: 2 }}>
                     <Box
                         sx={{
-                            p: 2,
                             width: "100%",
                             height: "50%",
                             flexDirection: "column",
@@ -151,7 +150,7 @@ export const Gamescreen = ({
                                         left: 0,
                                         top: 0,
                                         width: `${getGestureProgressFor(0)}%`,
-                                        height: "200%",
+                                        height: "100%",
                                         background: "#ff4455",
                                         transition: "width 0.1s linear",
                                         pointerEvents: "none",
@@ -160,13 +159,13 @@ export const Gamescreen = ({
                                 />
                                 <Box sx={{ flex: 1,  height: "40vh", overflow: "hidden"  }}>
                                     <Typography variant="h6" mb={1}>
-                                        {currentQuestion.answer1}
+                                        {currentQuestion.answer1 + "👍"}
                                     </Typography>
                                     <ImageRow images={imagesFirstAnswer} />
                                 </Box>
                             </Box>
 
-                            {/* QUESTION */}
+                            {/* QUESTION / EXPLANATION*/}
                             <Box
                                 sx={{
                                     width: "100%",
@@ -190,7 +189,11 @@ export const Gamescreen = ({
                                     }}
                                 >
                                     <Typography variant="subtitle1" align="center">
-                                        {currentQuestion.question}
+                                        {selected === null ?
+                                            currentQuestion.question :
+                                            correctAnswerGiven ?
+                                                "Richtig! " + currentQuestion.explanation :
+                                                    "Leider falsch. " + currentQuestion.explanation}
                                     </Typography>
                                 </Card>
                             </Box>
@@ -206,7 +209,7 @@ export const Gamescreen = ({
                                         left: 0,
                                         top: 0,
                                         width: `${getGestureProgressFor(1)}%`,
-                                        height: "200%",
+                                        height: "100%",
                                         background: "#3344ff",
                                         transition: "width 0.1s linear",
                                         pointerEvents: "none",
@@ -216,7 +219,7 @@ export const Gamescreen = ({
                                 <Box sx={{ flex: 1,  height: "40vh" }}>
                                     <ImageRow images={imagesSecondAnswer} />
                                     <Typography variant="h6" mb={1} sx={{ alignSelf: "center" }}>
-                                        {currentQuestion.answer2}
+                                        {currentQuestion.answer2 + "👎"}
                                     </Typography>
                                 </Box>
                             </Box>
