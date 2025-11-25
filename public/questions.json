@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1,
+    "question": "Welche Stadt hat mehr Einwohner?",
+    "answer1": "Tokio",
+    "answer2": "Berlin",
+    "correct_answer": 0,
+    "explanation": "Tokio hat über 37 Millionen Einwohner, während Berlin etwa 3,6 Millionen hat.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Akamon.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b3/Akihabara64.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Aoyama-cemetery.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/7f/07.08.21.Bundeskanzleramt.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/68/2011FUBerlin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d0/2016_Charite_Hospital.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Welcher Film hat den Oscar für den besten Film gewonnen?",
+    "answer1": "Parasite (Film)",
+    "answer2": "Inception",
+    "correct_answer": 0,
+    "explanation": "Parasite gewann 2020 den Oscar für den besten Film.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Parasite2019.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/fa/Parasite_Logo.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/Hans_Zimmer_2010.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/34/Impossible_staircase.svg"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Welches Tier ist ein Säugetier?",
+    "answer1": "Haie",
+    "answer2": "Delfine",
+    "correct_answer": 1,
+    "explanation": "Delfine sind Säugetiere, Haie sind Fische.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/50/100_0930-Haifischeier.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/2535_aquaimages.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Chinese_cuisine-Shark_fin_soup-01.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e1/Commdolph01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Dauphin_d%27Electre_%28Peponocephala_electra%29_%28Ifremer_00574-68649_-_51136%29.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Welches Unternehmen besitzt YouTube?",
+    "answer1": "Google",
+    "answer2": "Meta Platforms",
+    "correct_answer": 0,
+    "explanation": "Google hat YouTube im Jahr 2006 gekauft.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/1995_war_vor_30_Jahren%2C_genauer_30_Jahren_Screenshot_2025-08-30_133908.png",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Disambig-dark.svg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/79/2019_Facebook_Logo_variants.png",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook%2C_Inc._Logo_2019.svg"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Welcher Planet ist näher an der Sonne?",
+    "answer1": "Venus (Planet)",
+    "answer2": "Mars (Planet)",
+    "correct_answer": 0,
+    "explanation": "Die Venus ist der zweite Planet von der Sonne, Mars der vierte.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/1882_transit_of_venus.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/32/Alpha_Regio_3D.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ca/Artemis_Corona.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f7/An_artist%E2%80%99s_impression_of_Mars_four_billion_years_ago.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/70/Apparent_retrograde_motion_of_Mars_in_2003.gif",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Welcher Künstler malte die Mona Lisa?",
+    "answer1": "Vincent van Gogh",
+    "answer2": "Leonardo da Vinci",
+    "correct_answer": 1,
+    "explanation": "Leonardo da Vinci malte die Mona Lisa um 1503–1506.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0f/At_Eternity%27s_Gate_-_Vincent_Van_Gogh.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Disambig-dark.svg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/97/Ailes_battantes_Luc_Viatour.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/fe/Amboise_clos_luc%C3%A9_inventinos_de_vinci_automobile.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/75/Andrea_del_Verocchio_-_Tobias_and_the_Angel.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Welcher Ozean ist der größte?",
+    "answer1": "Atlantischer Ozean",
+    "answer2": "Pazifischer Ozean",
+    "correct_answer": 1,
+    "explanation": "Der Pazifische Ozean bedeckt über 30 % der Erdoberfläche.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/Atlantic_bathymetry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3b/Atlantik-Karte.png",
+      "https://upload.wikimedia.org/wikipedia/commons/4/43/Atlantischer_Ozean.ogg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Disambig-dark.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Pacific_Basin_Island_Geography.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Welche dieser Optionen ist eine Programmiersprache?",
+    "answer1": "Pythons",
+    "answer2": "Vipern",
+    "correct_answer": 0,
+    "explanation": "Python ist eine weit verbreitete Programmiersprache, Viper nicht.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Adult_pair_of_Morelia_boeleni.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Baumpython.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Azemiops_feae.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/Cerastes_cerastes_001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "In welchem Land steht der Eiffelturm?",
+    "answer1": "Frankreich",
+    "answer2": "Italien",
+    "correct_answer": 0,
+    "explanation": "Der Eiffelturm steht in Paris, Frankreich.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/2022_France_-_r%C3%A9gions_et_d%C3%A9partements%2C_noms.png",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/600x600_GMT_France_topo-R1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bc/A350_Berlin_ILA_18.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/bb/%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c9/2012_Italian_GP_-_Ferrari_pit.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/Aeroporto_Fiumicino_-_Torre_ENAV_ristrutturata_2015.jpeg"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Welches Tier kann fliegen?",
+    "answer1": "Adler (Biologie)",
+    "answer2": "Elefanten",
+    "correct_answer": 0,
+    "explanation": "Adler sind Vögel und können fliegen. Elefanten nicht.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/Kaiseradler_Aquila_heliaca_e_amk.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/ba/Orao_na_spomeniku_Nikoli_Zrinskom_%C4%8Cakove%C4%8Dkom.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/cb/A_family_group_of_elephants_in_Mudumalai_TR_AJTJohnsingh.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Augsburg_Naturmuseum_-_skeleton.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/62/Columbian_mammoth.JPG"
+    ]
+  }
+]
