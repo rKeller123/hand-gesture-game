@@ -1,13 +1,12 @@
 import { Button, Typography, Card, CardContent, CardActions, Box, Divider } from "@mui/material";
-import {Link, useNavigate} from "react-router";
+import {Link} from "react-router";
 
 const WelcomeTutorial = () => {
-  const navigate = useNavigate();
 
   return (
     <Card
       sx={{
-        maxWidth: 600,
+        maxWidth: 800,
         mx: "auto",
         my: 3,
         p: 2,

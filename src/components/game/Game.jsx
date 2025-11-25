@@ -2,8 +2,11 @@ import React, {useEffect, useState} from "react";
 import {Box, CircularProgress} from "@mui/material";
 import { useGestureDetection } from "../../common/gesture_detection/GestureDetectionContext.jsx";
 import Gamescreen from "../gamescreen";
+import {useNavigate} from "react-router";
 
-export const Game = () => {
+export const Game = ({ reportNewScore }) => {
+    const navigate = useNavigate();
+
     const [selected, setSelected] = useState(null);
     const [correctAnswerGiven, setCorrectAnswerGiven] = useState(null);
     const [numOfCorrects, setNumOfCorrects] = useState(0);
@@ -43,7 +46,10 @@ export const Game = () => {
         if (isCorrect) {
             setTimeout(() => pickNextQuestion(questions), 3000);
         } else {
-            // TODO: send to final screen
+            reportNewScore(Date.now(), numOfCorrects)
+            setTimeout(() => {
+                navigate("/end-screen")
+            }, 3000)
         }
     };
 

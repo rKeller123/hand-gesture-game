@@ -1,10 +1,13 @@
-import { AppBar, Toolbar, Typography, Box, IconButton } from "@mui/material";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents"; // Victory / Trophy icon
-import { useNavigate } from "react-router";
+import {AppBar, Toolbar, Typography, Box, Button} from "@mui/material";
+import { useNavigate, Link } from "react-router";
+import {useEffect} from "react";
 
-const HigherLowerAppBar = () => {
+const HigherLowerAppBar = ({ currentScore }) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(JSON.stringify(currentScore))
+  }, [currentScore]);
 
   return (
     <AppBar
@@ -43,17 +46,28 @@ const HigherLowerAppBar = () => {
           </Typography>
         </Box>
 
-        {/* Icon Buttons Section */}
         <Box sx={{ display: "flex", gap: 2 }}>
-          {/* Question Button */}
-          <IconButton onClick={() => navigate("/detailed-tutorial")}>
-            <HelpOutlineIcon sx={{ fontSize: 28 }} />
-          </IconButton>
-
-          {/* Finish Button */}
-          <IconButton onClick={() => navigate("/end-screen")}>
-            <EmojiEventsIcon sx={{ fontSize: 28 }} /> {/* Trophy icon / victory vibe */}
-          </IconButton>
+          <Typography>
+            High-Score: {currentScore.score ?? "-"}
+          </Typography>
+          <Button
+            variant="contained"
+            color="white"
+            size="large"
+            component={Link}
+            to="/detailed-tutorial"
+          >
+            Hilfe
+          </Button>
+          <Button
+            variant="contained"
+            color="white"
+            size="large"
+            component={Link}
+            to="/end-screen"
+          >
+            Beenden [✌️]
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
