@@ -48,7 +48,7 @@ const HigherLowerAppBar = ({ currentScore }) => {
 
         <Box sx={{ display: "flex", gap: 2 }}>
           <Typography>
-            High-Score: {currentScore.score ?? "-"}
+            High-Score: {currentScore ?? "-"}
           </Typography>
           <Button
             variant="contained"

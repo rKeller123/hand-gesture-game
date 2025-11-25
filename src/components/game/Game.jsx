@@ -46,7 +46,7 @@ export const Game = ({ reportNewScore }) => {
         if (isCorrect) {
             setTimeout(() => pickNextQuestion(questions), 3000);
         } else {
-            reportNewScore(Date.now(), numOfCorrects)
+            reportNewScore(numOfCorrects)
             setTimeout(() => {
                 navigate("/end-screen")
             }, 3000)

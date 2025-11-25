@@ -1,23 +1,22 @@
 import './App.css'
 import { GestureDetectionProvider } from './common/gesture_detection/GestureDetectionContext'
 import HigherLowerAppBar from './components/app_bar/HigherLowerAppBar'
-import Fingerpose_Poc from './components/fingerpose_poc'
 import WelcomeTutorial from './components/welcome_tutorial'
-import Gamescreen from "./components/gamescreen/Gamescreen.jsx";
 import Game from "./components/game";
 import {Route, Routes} from "react-router";
 import {useState} from "react";
+import EndScreen from "./components/end_screen/index.js";
 
 function App() {
-  const [currentScore, setCurrentScore] = useState({timestamp: null, score: null});
+  const [scores, setScores] = useState([])
 
-  const reportNewScore = (timestamp, score) => {
-    setCurrentScore({ timestamp, score })
+  const reportNewScore = (score) => {
+    setScores(prev => [...prev, score])
   }
 
   return (
     <GestureDetectionProvider>
-      <HigherLowerAppBar currentScore={currentScore} />
+      <HigherLowerAppBar currentScore={scores.at(scores.length - 1)} />
       <Routes>
         <Route
           path="/"
@@ -37,7 +36,7 @@ function App() {
         />
         <Route
           path="/end-screen"
-          element={<p>end screen</p>}
+          element={<EndScreen scores={scores} />}
         />
       </Routes>
     </GestureDetectionProvider>
