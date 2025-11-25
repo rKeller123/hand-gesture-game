@@ -7,7 +7,7 @@ const DESIGN_HEIGHT = 1000;
 const ImageRow = ({ images = [] }) => (
     <Box sx={{ display: "flex", gap: 2, width: "100%" }}>
         {images.map((src, i) => (
-            <Card key={i} sx={{ flex: 1, minWidth: 0 }}>
+            <Card key={i} sx={{ flex: 1, minWidth: 0, margin:2, marginTop:0 }}>
                 <Card
                     key={i}
                     sx={{
@@ -142,28 +142,55 @@ export const Gamescreen = ({
                             {/* First answer */}
                             <Box
                                 onClick={() => onAnswer(0)}
-                                sx={borderWhenAnswerGiven(0, "#ffddf1")}
+                                sx={{
+                                    ...borderWhenAnswerGiven(0, "#ffddf1"),
+                                    position: "relative",
+                                    overflow: "hidden",
+                                    height: "40vh",
+                                    p:10,
+                                }}
                             >
+                                {/* FULL-SIZE CONTAINER */}
                                 <Box
                                     sx={{
                                         position: "absolute",
-                                        left: 0,
-                                        top: 0,
-                                        width: `${getGestureProgressFor(0)}%`,
-                                        height: "100%",
-                                        background: "#ff4455",
-                                        transition: "width 0.1s linear",
-                                        pointerEvents: "none",
-                                        zIndex: 1,
+                                        inset: 0,
                                     }}
-                                />
-                                <Box sx={{ flex: 1,  height: "40vh", overflow: "hidden"  }}>
-                                    <Typography variant="h6" mb={1}>
-                                        {currentQuestion.answer1 + "👍"}
-                                    </Typography>
-                                    <ImageRow images={imagesFirstAnswer} />
+                                >
+                                    {/* PROGRESS BAR */}
+                                    <Box
+                                        sx={{
+                                            position: "absolute",
+                                            left: 0,
+                                            top: 0,
+                                            width: `${getGestureProgressFor(0)}%`,
+                                            height: "100%",
+                                            background: "#ff4455",
+                                            transition: "width 0.1s linear",
+                                            pointerEvents: "none",
+                                            zIndex: 1,
+                                        }}
+                                    />
+
+                                    {/* CONTENT */}
+                                    <Box sx={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        height: "100%",
+                                        position: "relative",
+                                        zIndex: 2
+                                    }}>
+                                        <Typography variant="h6" mb={1}>
+                                            {currentQuestion.answer1 + "👍"}
+                                        </Typography>
+
+                                        <Box sx={{ flex: 1, overflow: "hidden" }}>
+                                            <ImageRow images={imagesFirstAnswer} />
+                                        </Box>
+                                    </Box>
                                 </Box>
                             </Box>
+
 
                             {/* QUESTION / EXPLANATION*/}
                             <Box
@@ -201,8 +228,19 @@ export const Gamescreen = ({
                             {/* Second answer */}
                             <Box
                                 onClick={() => onAnswer(1)}
-                                sx={borderWhenAnswerGiven(1, "#2596be")}
+                                sx={{...borderWhenAnswerGiven(1, "#2596be"),
+                                    position: "relative",
+                                    overflow: "hidden",
+                                    height: "40vh",
+                                    p:10,
+                                }}
                             >
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        inset: 0,
+                                    }}
+                                >
                                 <Box
                                     sx={{
                                         position: "absolute",
@@ -210,7 +248,7 @@ export const Gamescreen = ({
                                         top: 0,
                                         width: `${getGestureProgressFor(1)}%`,
                                         height: "100%",
-                                        background: "#3344ff",
+                                        background: "#3322ff",
                                         transition: "width 0.1s linear",
                                         pointerEvents: "none",
                                         zIndex: 1,
@@ -222,6 +260,7 @@ export const Gamescreen = ({
                                         {currentQuestion.answer2 + "👎"}
                                     </Typography>
                                 </Box>
+                                    </Box>
                             </Box>
                         </Box>
                     </Box>
