@@ -1,6 +1,11 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, IconButton } from "@mui/material";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents"; // Victory / Trophy icon
+import { useNavigate } from "react-router";
 
 const HigherLowerAppBar = () => {
+  const navigate = useNavigate();
+
   return (
     <AppBar
       position="static"
@@ -8,7 +13,7 @@ const HigherLowerAppBar = () => {
       sx={{
         background: "linear-gradient(135deg, #b53f3fff 0%, #5c6bc0 100%)",
         padding: 1,
-        borderRadius: 5
+        borderRadius: 5,
       }}
     >
       <Toolbar
@@ -24,7 +29,8 @@ const HigherLowerAppBar = () => {
           <img
             src="logo.png"
             alt="Higher Lower Logo"
-            style={{ width: 80, height: 80, borderRadius: 12 }}
+            style={{ width: 80, height: 80, borderRadius: 12, cursor: "pointer" }}
+            onClick={() => navigate("/")}
           />
           <Typography
             variant="h5"
@@ -37,9 +43,17 @@ const HigherLowerAppBar = () => {
           </Typography>
         </Box>
 
-        {/* Right section (optional future actions, e.g., settings or help) */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          {/* Placeholder for buttons/icons if needed later */}
+        {/* Icon Buttons Section */}
+        <Box sx={{ display: "flex", gap: 2 }}>
+          {/* Question Button */}
+          <IconButton onClick={() => navigate("/detailed-tutorial")}>
+            <HelpOutlineIcon sx={{ fontSize: 28 }} />
+          </IconButton>
+
+          {/* Finish Button */}
+          <IconButton onClick={() => navigate("/end-screen")}>
+            <EmojiEventsIcon sx={{ fontSize: 28 }} /> {/* Trophy icon / victory vibe */}
+          </IconButton>
         </Box>
       </Toolbar>
     </AppBar>

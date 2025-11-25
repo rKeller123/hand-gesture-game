@@ -1,6 +1,9 @@
 import { Button, Typography, Card, CardContent, CardActions, Box, Divider } from "@mui/material";
+import {Link, useNavigate} from "react-router";
 
 const WelcomeTutorial = () => {
+  const navigate = useNavigate();
+
   return (
     <Card
       sx={{
@@ -78,6 +81,8 @@ const WelcomeTutorial = () => {
           color="primary"
           size="large"
           sx={{ width: "80%", borderRadius: 2 }}
+          component={Link}
+          to="/game"
         >
           OK!
         </Button>
@@ -92,6 +97,8 @@ const WelcomeTutorial = () => {
           color="secondary"
           size="large"
           sx={{ width: "80%", borderRadius: 2 }}
+          component={Link}
+          to="/test-game"
         >
           Zum Testbeispiel
         </Button>
