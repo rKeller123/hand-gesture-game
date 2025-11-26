@@ -64,6 +64,9 @@ export const Game = ({ reportNewScore }) => {
                 case "thumbs_down":
                     chosen = 1;
                     break;
+                case "victory":
+                    navigate("/end-screen");
+                    break;
                 default:
                     break;
             }
