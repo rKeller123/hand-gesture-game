@@ -1,8 +1,7 @@
 import { Button, Typography, Card, CardContent, CardActions, Box, Divider } from "@mui/material";
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 const WelcomeTutorial = () => {
-
   return (
     <Card
       sx={{
@@ -28,9 +27,8 @@ const WelcomeTutorial = () => {
         <Divider sx={{ mb: 2 }} />
 
         <Typography variant="body1" gutterBottom>
-          Im Spiel <b>„Higher vs. Lower“</b> siehst du zwei Optionen auf dem
-          Bildschirm. Dir wird eine Frage gestellt, und du musst entscheiden, ob
-          die <b>obere</b> oder die <b>untere Option</b> richtig ist.
+          Du siehst immer zwei Optionen auf dem Bildschirm und musst entscheiden,
+          welche davon richtig ist – <b>oben oder unten</b>.
         </Typography>
 
         <Box
@@ -43,38 +41,30 @@ const WelcomeTutorial = () => {
           }}
         >
           <Typography variant="body1" gutterBottom>
-            Du steuerst das Spiel mit Handgesten:
+            Steuerung über Handgesten:
           </Typography>
           <Typography variant="body2" gutterBottom>
-            👍 <b>Daumen hoch:</b> Wähle die obere Option
+            👍 <b>Daumen hoch:</b> obere Option
           </Typography>
           <Typography variant="body2" gutterBottom>
-            👎 <b>Daumen nach unten:</b> Wähle die untere Option
+            👎 <b>Daumen nach unten:</b> untere Option
           </Typography>
           <Typography variant="body2">
-            ✌️ <b>Victory:</b> Abbrechen ❌
+            ✌️ <b>Victory:</b> abbrechen ❌
           </Typography>
         </Box>
 
         <Typography variant="body1" gutterBottom>
-          Wenn du <b>richtig</b> liegst, erhältst du <b>einen Punkt</b>.  
-          Bei einer <b>falschen</b> Antwort wird das Spiel <b>beendet</b>.
+          Liegt deine Antwort richtig, erhältst du <b>einen Punkt</b>.
+          Bei einer falschen Antwort endet das Spiel.
         </Typography>
 
-        <Typography variant="body1" gutterBottom>
-          Versuche, so viele Punkte wie möglich zu sammeln!  
-          Bevor das eigentliche Spiel beginnt, wird ein Testversuch durchgeführt.
+        <Typography variant="body2" color="text.secondary">
+          Für mehr Details oder Tipps → klicke oben auf <b>Hilfe</b>.
         </Typography>
       </CardContent>
 
-      <CardActions
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 1.5,
-          pb: 2,
-        }}
-      >
+      <CardActions sx={{ display: "flex", justifyContent: "center", pb: 2 }}>
         <Button
           variant="contained"
           color="primary"
@@ -83,23 +73,7 @@ const WelcomeTutorial = () => {
           component={Link}
           to="/game"
         >
-          OK!
-        </Button>
-
-        <Typography variant="body2" color="text.secondary">
-          Willst du stattdessen die Interaktion üben?  
-          Dann klicke auf das Testbeispiel!
-        </Typography>
-
-        <Button
-          variant="outlined"
-          color="secondary"
-          size="large"
-          sx={{ width: "80%", borderRadius: 2 }}
-          component={Link}
-          to="/test-game"
-        >
-          Zum Testbeispiel
+          Spiel starten
         </Button>
       </CardActions>
     </Card>

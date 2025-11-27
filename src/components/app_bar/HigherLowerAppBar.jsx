@@ -1,13 +1,15 @@
-import {AppBar, Toolbar, Typography, Box, Button} from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
 import { useNavigate, Link } from "react-router";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
-const HigherLowerAppBar = ({ currentScore }) => {
+const HigherLowerAppBar = ({ scores }) => {
   const navigate = useNavigate();
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
-    console.log(JSON.stringify(currentScore))
-  }, [currentScore]);
+    if (!scores || scores.length === 0) return;
+    setHighScore(Math.max(...scores));
+  }, [scores]);
 
   return (
     <AppBar
@@ -32,41 +34,41 @@ const HigherLowerAppBar = ({ currentScore }) => {
           <img
             src="logo.png"
             alt="Higher Lower Logo"
-            style={{ width: 80, height: 80, borderRadius: 12, cursor: "pointer" }}
+            style={{ width: 70, height: 70, borderRadius: 12, cursor: "pointer" }}
             onClick={() => navigate("/")}
           />
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: 700,
-              letterSpacing: 1,
-            }}
-          >
+          <Typography variant="h5" sx={{ fontWeight: 700 }}>
             Higher vs. Lower
           </Typography>
         </Box>
 
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <Typography>
-            High-Score: {currentScore ?? "-"}
+        {/* Centered Score */}
+        <Box sx={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+          <Typography variant="h6">
+            High-Score: {highScore}
           </Typography>
+        </Box>
+
+        {/* Buttons */}
+        <Box sx={{ display: "flex", gap: 2 }}>
           <Button
             variant="contained"
-            color="white"
-            size="large"
             component={Link}
             to="/detailed-tutorial"
+            color="white"
+            sx={{ textTransform: "none", borderRadius: 2 }}
           >
             Hilfe
           </Button>
+
           <Button
             variant="contained"
-            color="white"
-            size="large"
             component={Link}
             to="/end-screen"
+            color="white"
+            sx={{ textTransform: "none", borderRadius: 2 }}
           >
-            Beenden [✌️]
+            Beenden ✌️
           </Button>
         </Box>
       </Toolbar>
