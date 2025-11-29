@@ -4,7 +4,7 @@ import { useGestureDetection } from "../../common/gesture_detection/GestureDetec
 import Gamescreen from "../gamescreen";
 import {useNavigate} from "react-router";
 
-export const Game = ({ reportNewScore }) => {
+export const Game = ({ reportNewScore, reportCurrentScore }) => {
     const navigate = useNavigate();
 
     const [selected, setSelected] = useState(null);
@@ -27,6 +27,9 @@ export const Game = ({ reportNewScore }) => {
         if (questions.length > 0) pickNextQuestion();
     }, [questions]);
 
+    useEffect(() => {
+        reportCurrentScore(numOfCorrects);
+    }, [numOfCorrects]);
 
     const pickNextQuestion = () => {
         const index = Math.floor(Math.random() * questions.length);
@@ -46,10 +49,11 @@ export const Game = ({ reportNewScore }) => {
         if (isCorrect) {
             setTimeout(() => pickNextQuestion(questions), 3000);
         } else {
-            reportNewScore(numOfCorrects)
+            reportNewScore(numOfCorrects);
+            reportCurrentScore(null);
             setTimeout(() => {
                 navigate("/end-screen")
-            }, 3000)
+            }, 3000);
         }
     };
 
@@ -87,7 +91,6 @@ export const Game = ({ reportNewScore }) => {
             <Gamescreen
                 selected={selected}
                 correctAnswerGiven={correctAnswerGiven}
-                numOfCorrects={numOfCorrects}
                 onAnswer={handleAnswer}
                 currentQuestion={currentQuestion}
                 gestureProgress={gestureProgress}

@@ -2,15 +2,19 @@ import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
 import { useNavigate, Link } from "react-router";
 import {useEffect, useState} from "react";
 
-const HigherLowerAppBar = ({ scores }) => {
+const HigherLowerAppBar = ({ scores, currentScore }) => {
   const navigate = useNavigate();
   const [highScore, setHighScore] = useState(0);
+  const [currentScoreOfGame, setCurrentScoreOfGame] = useState(null);
 
   useEffect(() => {
     if (!scores || scores.length === 0) return;
     setHighScore(Math.max(...scores));
   }, [scores]);
 
+    useEffect(() => {
+        setCurrentScoreOfGame(currentScore)
+    }, [currentScore]);
   return (
     <AppBar
       position="static"
@@ -47,6 +51,10 @@ const HigherLowerAppBar = ({ scores }) => {
           <Typography variant="h6">
             High-Score: {highScore}
           </Typography>
+            {currentScoreOfGame && (
+            <Typography variant="h6">
+            Score: {currentScoreOfGame}
+            </Typography>)}
         </Box>
 
         {/* Buttons */}

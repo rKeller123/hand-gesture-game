@@ -13,9 +13,14 @@ function App() {
     const stored = localStorage.getItem("scores");
     return stored ? JSON.parse(stored) : [];
   });
+  const [currentScore, setCurrentScore] = useState(null);
 
   const reportNewScore = (score) => {
     setScores(prev => [...prev, score]);
+  };
+
+  const reportCurrentScore = (currentScore) => {
+      setCurrentScore(currentScore);
   };
 
   useEffect(() => {
@@ -24,11 +29,11 @@ function App() {
 
   return (
     <GestureDetectionProvider>
-      <HigherLowerAppBar scores={scores} />
+      <HigherLowerAppBar scores={scores} currentScore={currentScore} />
       <Routes>
         <Route path="/" element={<WelcomeTutorial />} />
         <Route path="/detailed-tutorial" element={<DetailedTutorial />} />
-        <Route path="/game" element={<Game reportNewScore={reportNewScore} />} />
+        <Route path="/game" element={<Game reportNewScore={reportNewScore} reportCurrentScore={reportCurrentScore} />} />
         <Route path="/test-game" element={<p>test spiel</p>} />
         <Route path="/end-screen" element={<EndScreen scores={scores} />} />
       </Routes>
