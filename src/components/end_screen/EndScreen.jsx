@@ -10,7 +10,6 @@ const EndScreen = ({ scores }) => {
   const averageScore =
     totalGames > 0 ? (scores.reduce((acc, val) => acc + val, 0) / totalGames).toFixed(1) : 0;
 
-  // 🧠 Performance-based feedback message
   let feedbackMessage = "";
   if (lastScore === 0) {
     feedbackMessage = "Kopf hoch! Jeder Champion hat mal bei 0 Punkten angefangen 💪";
@@ -49,11 +48,11 @@ const EndScreen = ({ scores }) => {
         <Divider sx={{ mb: 3 }} />
 
         <Typography variant="h6" gutterBottom>
-          📊 Score Verlauf
+          Punkteverlauf
         </Typography>
 
         {scores.length === 0 ? (
-          <Typography>No scores yet.</Typography>
+          <Typography>Noch keine Spiele gespielt.</Typography>
         ) : (
           <LineChart
             series={[{ data: scores }]}
@@ -64,9 +63,9 @@ const EndScreen = ({ scores }) => {
         )}
 
         <Box sx={{ mt: 3 }}>
-          <Typography>🧮 Durchschnitt: {averageScore}</Typography>
-          <Typography>🥇 Bester Score: {bestScore}</Typography>
-          <Typography>📈 Spiele insgesamt: {totalGames}</Typography>
+          <Typography>Durchschnitt: {averageScore}</Typography>
+          <Typography>Bester Score: {bestScore}</Typography>
+          <Typography>Spiele insgesamt: {totalGames}</Typography>
         </Box>
 
         <Divider sx={{ my: 3 }} />

@@ -1,7 +1,26 @@
-import { Button, Typography, Card, CardContent, CardActions, Box, Divider, List, ListItem, ListItemText } from "@mui/material";
-import { Link } from "react-router";
+import {
+  Button,
+  Typography,
+  Card,
+  CardContent,
+  CardActions,
+  Box,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  CircularProgress
+} from "@mui/material";
+import {Link} from "react-router";
+import {useGestureDetection} from "../../common/gesture_detection/GestureDetectionContext.jsx";
+import Webcam from "react-webcam";
+import CameraConfig from "../../common/CameraConfig.js";
+import {useEffect, useState} from "react";
 
 const DetailedTutorial = () => {
+
+  const {modelLoading, gestureProgress} = useGestureDetection();
+
   return (
     <Card
       sx={{
@@ -26,10 +45,9 @@ const DetailedTutorial = () => {
           Jedes Mal siehst du <b>zwei Antwortmöglichkeiten</b> – oben und unten.
         </Typography>
 
-        {/* SPIELABLAUF */}
         <Box sx={{ p: 2, mb: 3, bgcolor: "#f5f7fa", borderRadius: 2, border: "1px solid #e0e0e0" }}>
           <Typography variant="h6" sx={{ fontWeight: 600 }} gutterBottom>
-            🧠 Spielablauf
+            Spielablauf
           </Typography>
 
           <List>
@@ -41,10 +59,9 @@ const DetailedTutorial = () => {
           </List>
         </Box>
 
-        {/* GESTEN */}
         <Box sx={{ p: 2, mb: 3, bgcolor: "#eef5ff", borderRadius: 2, border: "1px solid #d0d8e0" }}>
           <Typography variant="h6" sx={{ fontWeight: 600 }} gutterBottom>
-            ✋ Steuerung mit Handgesten
+            Steuerung mit Handgesten
           </Typography>
 
           <Typography variant="body2" gutterBottom>
@@ -56,12 +73,20 @@ const DetailedTutorial = () => {
           <Typography variant="body2" gutterBottom>
             ✌️ <b>Victory:</b> Spiel abbrechen ❌
           </Typography>
+
+          {/* TODO test this behaviour */}
+          <Typography variant="h6" gutterBottom>
+            Teste die Gestensteuerung hier!
+          </Typography>
+          {modelLoading ? <CircularProgress /> :
+            <Typography variant="body1">{JSON.stringify(gestureProgress)}</Typography>
+          }
+
         </Box>
 
-        {/* GESTENERKENNUNG */}
         <Box sx={{ p: 2, mb: 3, bgcolor: "#e9fff1", borderRadius: 2, border: "1px solid #bde5c8" }}>
           <Typography variant="h6" sx={{ fontWeight: 600 }} gutterBottom>
-            ⏳ Geste erkannt? Fortschrittsanzeige!
+            Geste erkannt? Fortschrittsanzeige!
           </Typography>
 
           <Typography variant="body1" gutterBottom>
@@ -70,14 +95,13 @@ const DetailedTutorial = () => {
           </Typography>
 
           <Typography variant="body2">
-            👉 Dadurch vermeidest du zufällige Bewegungen oder Fehlinterpretationen.
+            Dadurch vermeidest du zufällige Bewegungen oder Fehlinterpretationen.
           </Typography>
         </Box>
 
-        {/* STATISTIKEN */}
         <Box sx={{ p: 2, mb: 3, bgcolor: "#fff4e6", borderRadius: 2, border: "1px solid #e6d0b0" }}>
           <Typography variant="h6" sx={{ fontWeight: 600 }} gutterBottom>
-            📊 Auswertung am Ende des Spiels
+            Auswertung am Ende des Spiels
           </Typography>
 
           <Typography variant="body1" gutterBottom>
@@ -86,10 +110,10 @@ const DetailedTutorial = () => {
           </Typography>
 
           <List>
-            <ListItem><ListItemText primary="📈 Punktezahl & Highscore" /></ListItem>
-            <ListItem><ListItemText primary="🕒 Verlauf deiner letzten Spiele" /></ListItem>
-            <ListItem><ListItemText primary="🏆 Persönliche Bestleistung" /></ListItem>
-            <ListItem><ListItemText primary="📅 Spielhistorie (z. B. Punkte über Zeit)" /></ListItem>
+            <ListItem><ListItemText primary="Punktezahl & Highscore" /></ListItem>
+            <ListItem><ListItemText primary="Verlauf deiner letzten Spiele" /></ListItem>
+            <ListItem><ListItemText primary="Persönliche Bestleistung" /></ListItem>
+            <ListItem><ListItemText primary="Spielhistorie (z. B. Punkte über Zeit)" /></ListItem>
           </List>
 
           <Typography variant="body2">
@@ -99,7 +123,7 @@ const DetailedTutorial = () => {
 
         {/* ZIEL */}
         <Typography variant="body1" gutterBottom>
-          🎯 <b>Ziel des Spiels:</b> Sammle so viele Punkte wie möglich – jeder Fehler beendet den Lauf!
+          <b>Ziel des Spiels:</b> Sammle so viele Punkte wie möglich – jeder Fehler beendet den Lauf!
         </Typography>
       </CardContent>
 

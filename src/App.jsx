@@ -4,12 +4,11 @@ import HigherLowerAppBar from './components/app_bar/HigherLowerAppBar'
 import WelcomeTutorial from './components/welcome_tutorial'
 import Game from "./components/game";
 import {Route, Routes} from "react-router";
-import {useState, useEffect} from "react";      // ⬅ added useEffect
+import {useState, useEffect} from "react";
 import EndScreen from "./components/end_screen/index.js";
 import DetailedTutorial from "./components/detailed_tutorial/index.js";
 
 function App() {
-  // Load initial scores from localStorage
   const [scores, setScores] = useState(() => {
     const stored = localStorage.getItem("scores");
     return stored ? JSON.parse(stored) : [];
@@ -19,7 +18,6 @@ function App() {
     setScores(prev => [...prev, score]);
   };
 
-  // Save scores to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("scores", JSON.stringify(scores));
   }, [scores]);
