@@ -174,9 +174,99 @@
       "https://upload.wikimedia.org/wikipedia/commons/d/d9/A_Bald_Eagle_%28139717217%29.jpeg"
     ],
     "answer2_imgs": [
-      "https://upload.wikimedia.org/wikipedia/commons/8/88/Kruger_National_Park_%28ZA%29%2C_Elefant_--2024--_0649.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Dumbo_the_Flying_Elephant_Close-up.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/7/7e/Nature_of_Ngorongoro_Conservation_Area_%28129%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/80/Kruger_National_Park_%28ZA%29%2C_Elefanten_--2024--_0137.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/f/f6/Red_elephant_in_dirt.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Welcher Fluss ist der längste der Welt?",
+    "answer1": "Nil",
+    "answer2": "Amazonas",
+    "correct_answer": 1,
+    "explanation": "Neuere Messungen zeigen, dass der Amazonas etwas länger ist als der Nil.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/fd/Luxor%2C_Egypt%2C_River_Nile_sunset.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/de/Nile_River_and_delta_from_orbit.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/05/Nile_R02.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Amazon_River_ESA387332.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Amazon_River_-_2018.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Amazon_CIAT_%282%29.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Welches Land hat die größte Bevölkerung?",
+    "answer1": "China",
+    "answer2": "Indien",
+    "correct_answer": 1,
+    "explanation": "Seit 2023 hat Indien mehr Einwohner als China.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/50/Badaling_China_Great-Wall-of-China-01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f0/Karte_Millionenst%C3%A4dte_in_China_2020.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/Taj_Mahal%2C_Agra%2C_India_edit2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/57/India-locator-map-blank.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1e/India_-_Koyambedu_Market_-_Market_04_%283986889326%29.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Was ist die SI-Einheit von elektrischer Leistung?",
+    "answer1": "Watt",
+    "answer2": "Volt",
+    "correct_answer": 0,
+    "explanation": "Die SI-Einheit der Leistung ist Watt (W). Volt misst elektrische Spannung.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/2c/James_Watt_by_Henry_Howard.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ca/EnergyCounterDutchPowerGrid.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Wattmeter.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/cb/EB1911_Voltmeter%2C_Fig._3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/Alessandro_Volta.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/97/Warning_-_25%2C000_volts_AC_at_Didcot_%28railway%29_Junction_-_geograph.org.uk_-_5551496.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Wie heißt die größte Wüste der Welt (nach Fläche)?",
+    "answer1": "Sahara",
+    "answer2": "Antarktis",
+    "correct_answer": 1,
+    "explanation": "Die Antarktis gilt als Kältewüste und ist flächenmäßig die größte Wüste der Welt.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Moonlight_in_the_Sahara.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c6/Caravan_in_the_desert.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Sahara_real_color.jpg"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/Antarctica_6400px_from_Blue_Marble.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Penguin_in_Antarctica_jumping_out_of_the_water.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/db/Mt_Herschel%2C_Antarctica%2C_Jan_2006.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Welcher Planet hat die meisten Monde im Sonnensystem?",
+    "answer1": "Jupiter",
+    "answer2": "Saturn",
+    "correct_answer": 1,
+    "explanation": "Stand 2024 hat Saturn mit über 80 bestätigten Monden die meisten im Sonnensystem.",
+    "answer1_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/75/Portrait_of_Jupiter_from_Cassini.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/Jupiter_taken_with_Nikon_P900_-_2019-06-16_%282%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/90/Jupiter_Family_of_Moons_by_Juno.png"
+    ],
+    "answer2_imgs": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Saturn_-_April_25_2016_%2837612580000%29.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Quadruple_Saturn_moon_transit.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Saturn_with_auroras.jpg"
     ]
   }
 ]
