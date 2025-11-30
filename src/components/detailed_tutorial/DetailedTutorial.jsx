@@ -9,17 +9,27 @@ import {
   List,
   ListItem,
   ListItemText,
-  CircularProgress
+  CircularProgress, LinearProgress
 } from "@mui/material";
 import {Link} from "react-router";
 import {useGestureDetection} from "../../common/gesture_detection/GestureDetectionContext.jsx";
-import Webcam from "react-webcam";
-import CameraConfig from "../../common/CameraConfig.js";
-import {useEffect, useState} from "react";
 
 const DetailedTutorial = () => {
 
   const {modelLoading, gestureProgress} = useGestureDetection();
+
+  const gestureNameToEmoji = (gesture) => {
+    switch (gesture) {
+      case "thumbs_up":
+        return "👍";
+      case "thumbs_down":
+        return "👎";
+      case "victory":
+        return "✌️";
+      default:
+        return null;
+    }
+  }
 
   return (
     <Card
@@ -73,14 +83,41 @@ const DetailedTutorial = () => {
           <Typography variant="body2" gutterBottom>
             ✌️ <b>Victory:</b> Spiel abbrechen ❌
           </Typography>
+          <br/>
 
-          {/* TODO test this behaviour */}
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="body1" gutterBottom>
             Teste die Gestensteuerung hier!
           </Typography>
-          {modelLoading ? <CircularProgress /> :
-            <Typography variant="body1">{JSON.stringify(gestureProgress)}</Typography>
-          }
+          {modelLoading ? (
+            <CircularProgress />
+          ) : (
+            <Box
+              sx={{
+                p: 2,
+                borderRadius: 2,
+                border: "1px dashed #b0bec5",
+                bgcolor: "#fafafa",
+                textAlign: "center",
+              }}
+            >
+              <Typography variant="body1" sx={{ mb: 1, fontWeight: 600 }}>
+                Aktuelle Geste:
+              </Typography>
+
+              <Typography variant="h4">
+                {gestureNameToEmoji(gestureProgress.gesture) || "-"}
+              </Typography>
+
+              <LinearProgress
+                variant="determinate"
+                value={gestureProgress.progress * 10}
+                sx={{ mt: 2, height: 10, borderRadius: 5 }}
+              />
+              <Typography variant="caption">
+                Erkennung: {Math.round(gestureProgress.progress * 10)}%
+              </Typography>
+            </Box>
+          )}
 
         </Box>
 
