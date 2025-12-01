@@ -183,17 +183,6 @@ const DetailedTutorial = () => {
           Direkt zum Spiel
         </Button>
 
-        <Button
-          variant="outlined"
-          color="secondary"
-          size="large"
-          sx={{ width: "80%", borderRadius: 2 }}
-          component={Link}
-          to="/test-game"
-        >
-          Testbeispiel starten
-        </Button>
-
         <Button size="small" sx={{ mt: 2 }} component={Link} to="/">
           Zurück zur Startseite
         </Button>

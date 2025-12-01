@@ -34,7 +34,6 @@ function App() {
         <Route path="/" element={<WelcomeTutorial />} />
         <Route path="/detailed-tutorial" element={<DetailedTutorial />} />
         <Route path="/game" element={<Game reportNewScore={reportNewScore} reportCurrentScore={reportCurrentScore} />} />
-        <Route path="/test-game" element={<p>test spiel</p>} />
         <Route path="/end-screen" element={<EndScreen scores={scores} />} />
       </Routes>
     </GestureDetectionProvider>

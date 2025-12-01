@@ -76,7 +76,7 @@ const HigherLowerAppBar = ({ scores, currentScore }) => {
             color="white"
             sx={{ textTransform: "none", borderRadius: 2 }}
           >
-            Beenden ✌️
+            Statistiken ✌️
           </Button>
         </Box>
       </Toolbar>
