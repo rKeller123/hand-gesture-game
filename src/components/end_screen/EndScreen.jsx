@@ -35,7 +35,7 @@ const EndScreen = ({ scores }) => {
     >
       <CardContent>
         <Typography variant="h4" align="center" sx={{ fontWeight: 700 }}>
-          Spiel beendet!
+          Statistiken
         </Typography>
         <Typography variant="h6" align="center" color="primary" sx={{ mb: 2 }}>
           Dein letzter Score: {lastScore} Punkte
@@ -75,7 +75,7 @@ const EndScreen = ({ scores }) => {
             Nochmals spielen
           </Button>
           <Button variant="outlined" component={Link} to="/detailed-tutorial">
-            Tipps & Verbesserung
+            Zur Hilfe
           </Button>
         </Box>
       </CardContent>
