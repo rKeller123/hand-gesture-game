@@ -61,6 +61,7 @@ const HigherLowerAppBar = ({ scores, currentScore }) => {
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button
             variant="contained"
+            onClick={() => setCurrentScoreOfGame(null)}
             component={Link}
             to="/detailed-tutorial"
             color="white"
