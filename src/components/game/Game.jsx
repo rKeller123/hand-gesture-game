@@ -74,6 +74,7 @@ export const Game = ({ reportNewScore, reportCurrentScore, victoryProgress }) =>
                     break;
                 case "victory":
                     reportCurrentScore(null);
+                    victoryProgress(0);
                     navigate("/end-screen");
                     break;
                 default:
