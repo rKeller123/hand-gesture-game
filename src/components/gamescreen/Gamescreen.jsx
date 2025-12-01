@@ -113,6 +113,7 @@ export const Gamescreen = ({
                     >
                         {/* First answer */}
                         <Box
+                            //onClick={() => onAnswer(0)}
                             sx={{
                                 ...borderWhenAnswerGiven(0, "#ffddf1"),
                                 position: "relative",
@@ -200,6 +201,7 @@ export const Gamescreen = ({
 
                         {/* Second answer */}
                         <Box
+                            //onClick={() => onAnswer(1)}
                             sx={{
                                 ...borderWhenAnswerGiven(1, "#2596be"),
                                 position: "relative",

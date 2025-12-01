@@ -51,7 +51,7 @@ const HigherLowerAppBar = ({ scores, currentScore }) => {
           <Typography variant="h6">
             High-Score: {highScore}
           </Typography>
-            {currentScoreOfGame && (
+            {currentScoreOfGame !== null && (
             <Typography variant="h6">
             Score: {currentScoreOfGame}
             </Typography>)}
