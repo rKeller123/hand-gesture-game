@@ -63,7 +63,6 @@ export const Gamescreen = ({
             background: baseBg,
             border,
             boxSizing: "border-box",
-            cursor: selected === null ? "pointer" : "default",
             display: "flex",
             gap: 2,
             alignItems: "center",
