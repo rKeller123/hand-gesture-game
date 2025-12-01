@@ -108,6 +108,7 @@ export const Gamescreen = ({
                             height: "50%",
                             flexDirection: "column",
                             border: "1px solid black",
+                            marginTop: 3
                         }}
                     >
                         {/* First answer */}

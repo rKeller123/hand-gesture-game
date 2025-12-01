@@ -71,6 +71,7 @@ const HigherLowerAppBar = ({ scores, currentScore }) => {
 
           <Button
             variant="contained"
+            onClick={() => setCurrentScoreOfGame(null)}
             component={Link}
             to="/end-screen"
             color="white"

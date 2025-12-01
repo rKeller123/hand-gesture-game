@@ -69,6 +69,7 @@ export const Game = ({ reportNewScore, reportCurrentScore }) => {
                     chosen = 1;
                     break;
                 case "victory":
+                    reportCurrentScore(null);
                     navigate("/end-screen");
                     break;
                 default:
