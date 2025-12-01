@@ -61,6 +61,9 @@ export const Game = ({ reportNewScore, reportCurrentScore, victoryProgress }) =>
         if (gestureProgress.gesture === "victory"){
             victoryProgress(gestureProgress.progress);
         }
+        if(gestureProgress.gesture === null){
+            victoryProgress(0);
+        }
 
         if (gestureProgress.progress >= 10 && selected === null) {
             let chosen = null;
