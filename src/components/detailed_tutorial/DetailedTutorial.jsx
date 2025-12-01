@@ -142,15 +142,14 @@ const DetailedTutorial = () => {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-            Wenn das Spiel endet (z. B. durch eine falsche Antwort),
-            bekommst du einen <b>Übersichtsbildschirm</b> mit deiner Leistung:
+            Wenn das Spiel endet (bei einer falschen Antwort),
+            siehst du einen <b>Übersichtsbildschirm</b> mit deiner Leistung:
           </Typography>
 
           <List>
-            <ListItem><ListItemText primary="Punktezahl & Highscore" /></ListItem>
+            <ListItem><ListItemText primary="Punktezahl" /></ListItem>
             <ListItem><ListItemText primary="Verlauf deiner letzten Spiele" /></ListItem>
             <ListItem><ListItemText primary="Persönliche Bestleistung" /></ListItem>
-            <ListItem><ListItemText primary="Spielhistorie (z. B. Punkte über Zeit)" /></ListItem>
           </List>
 
           <Typography variant="body2">

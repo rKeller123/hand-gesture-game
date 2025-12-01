@@ -44,7 +44,7 @@ const WelcomeTutorial = () => {
             Steuerung über Handgesten:
           </Typography>
           <Typography variant="body2" gutterBottom>
-            👍 <b>Daumen hoch:</b> obere Option
+            👍 <b>Daumen nach oben:</b> obere Option
           </Typography>
           <Typography variant="body2" gutterBottom>
             👎 <b>Daumen nach unten:</b> untere Option
@@ -55,12 +55,12 @@ const WelcomeTutorial = () => {
         </Box>
 
         <Typography variant="body1" gutterBottom>
-          Liegt deine Antwort richtig, erhältst du <b>einen Punkt</b>.
+          Ist deine Antwort richtig, erhältst du <b>einen Punkt</b>.
           Bei einer falschen Antwort endet das Spiel.
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          Für mehr Details oder Tipps → klicke oben auf <b>Hilfe</b>.
+          Für mehr Details → klicke oben auf <b>Hilfe</b>.
         </Typography>
       </CardContent>
 
