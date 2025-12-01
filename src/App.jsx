@@ -14,6 +14,7 @@ function App() {
     return stored ? JSON.parse(stored) : [];
   });
   const [currentScore, setCurrentScore] = useState(null);
+  const [victoryProgress, setVictoryProgress] = useState(0);
 
   const reportNewScore = (score) => {
     setScores(prev => [...prev, score]);
@@ -29,11 +30,13 @@ function App() {
 
   return (
     <GestureDetectionProvider>
-      <HigherLowerAppBar scores={scores} currentScore={currentScore} />
+      <HigherLowerAppBar scores={scores} currentScore={currentScore} victoryProgressBar={victoryProgress}/>
       <Routes>
         <Route path="/" element={<WelcomeTutorial />} />
         <Route path="/detailed-tutorial" element={<DetailedTutorial />} />
-        <Route path="/game" element={<Game reportNewScore={reportNewScore} reportCurrentScore={reportCurrentScore} />} />
+        <Route path="/game" element={<Game reportNewScore={reportNewScore}
+                                           reportCurrentScore={reportCurrentScore}
+                                           victoryProgress={(progress) => setVictoryProgress(progress)}/>} />
         <Route path="/end-screen" element={<EndScreen scores={scores} />} />
       </Routes>
     </GestureDetectionProvider>

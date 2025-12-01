@@ -4,7 +4,7 @@ import { useGestureDetection } from "../../common/gesture_detection/GestureDetec
 import Gamescreen from "../gamescreen";
 import {useNavigate} from "react-router";
 
-export const Game = ({ reportNewScore, reportCurrentScore }) => {
+export const Game = ({ reportNewScore, reportCurrentScore, victoryProgress }) => {
     const navigate = useNavigate();
 
     const [selected, setSelected] = useState(null);
@@ -58,6 +58,10 @@ export const Game = ({ reportNewScore, reportCurrentScore }) => {
     };
 
     useEffect(() => {
+        if (gestureProgress.gesture === "victory"){
+            victoryProgress(gestureProgress.progress);
+        }
+
         if (gestureProgress.progress >= 10 && selected === null) {
             let chosen = null;
 

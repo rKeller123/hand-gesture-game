@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
 import { useNavigate, Link } from "react-router";
 import {useEffect, useState} from "react";
 
-const HigherLowerAppBar = ({ scores, currentScore }) => {
+const HigherLowerAppBar = ({ scores, currentScore, victoryProgressBar }) => {
   const navigate = useNavigate();
   const [highScore, setHighScore] = useState(0);
   const [currentScoreOfGame, setCurrentScoreOfGame] = useState(null);
@@ -76,9 +76,25 @@ const HigherLowerAppBar = ({ scores, currentScore }) => {
             component={Link}
             to="/end-screen"
             color="white"
-            sx={{ textTransform: "none", borderRadius: 2 }}
+            sx={{ textTransform: "none", borderRadius: 2, position: "relative", overflow:"hidden"}}
           >
             Statistiken ✌️
+
+              {/* Victory Gesture Progress */}
+              <Box
+                  sx={{
+                      position: "absolute",
+                      left: 0,
+                      top: 0,
+                      width: `${Math.min(victoryProgressBar * 10, 100)}%`,
+                      height: "100%",
+                      background: "rgba(50,200,50,0.3)",
+                      pointerEvents: "none",
+                      transition: "width 0.1s linear",
+                      zIndex: 1,
+                  }}
+              />
+
           </Button>
         </Box>
       </Toolbar>
